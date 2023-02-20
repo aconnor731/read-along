@@ -8,14 +8,14 @@ function App() {
   console.log(lines)
 
   const highlighted = {
-    backgroundColor: '#FFDF00',
-    color: 'black',
+    backgroundColor: '#DFDFDF',
+    color: '#292929',
   }
 
   return (
     <div>
       <div className="App" onClick={() => setIsHighlighted(isHighlighted + 1)}>
-        <div style={{ width: '75%', padding: '20px 0 0 20px', textAlign: 'left', whiteSpace: 'pre-wrap', fontSize: '24px' }}>
+        <div style={{ width: '70%', padding: '20px 0 0 20px', textAlign: 'left', whiteSpace: 'pre-wrap', fontSize: '24px' }}>
           {lines?.map((line: string, index: number) => <div style={index === isHighlighted ? highlighted : { backgroundColor: 'transparent'}}>{line}<br /></div>)}
         </div>
       </div>
