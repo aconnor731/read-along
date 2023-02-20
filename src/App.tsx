@@ -4,7 +4,7 @@ import * as books from './books';
 
 function App() {
   const [isHighlighted, setIsHighlighted] = useState(0);
-  const lines = books.politics.match(/.{1,150}/g);
+  const lines = books.ethics.match(/.{1,150}/g);
   console.log(lines)
 
   const highlighted = {
@@ -15,7 +15,7 @@ function App() {
   return (
     <div>
       <div className="App" onClick={() => setIsHighlighted(isHighlighted + 1)}>
-        <div style={{ width: '55%', padding: '20px 0 0 20px', textAlign: 'left', whiteSpace: 'pre-wrap', fontSize: '24px' }}>
+        <div style={{ width: '75%', padding: '20px 0 0 20px', textAlign: 'left', whiteSpace: 'pre-wrap', fontSize: '24px' }}>
           {lines?.map((line: string, index: number) => <div style={index === isHighlighted ? highlighted : { backgroundColor: 'transparent'}}>{line}<br /></div>)}
         </div>
       </div>
